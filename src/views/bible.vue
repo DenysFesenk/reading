@@ -8,7 +8,7 @@
     ></dot-loader>
     <div v-if="!loading">
       <div v-if="readArray">
-        <the-calendar/>
+        <the-calendar :dateChanged="handleDateChanged"/>
         <the-title> {{ readArray.attributes.title }} </the-title>
         <the-content> {{ readArray.attributes.content }} </the-content>
       </div>
@@ -32,6 +32,11 @@ export default {
       loading: true,
     }
   },
+  watch: {
+    date: function(){
+      this.getData(this.date);
+    },
+  },
   components: {
     DotLoader,
     TheCalendar,
@@ -40,11 +45,19 @@ export default {
   },
   methods: {
     readingMorning,
+    async getData(value){
+      this.readArray = await this.readingMorning(3, value),
+      this.loading = false,
+      this.verse = this.readArray.attributes.verse.replace(/(<([^>]+)>)/g, ""),
+      this.content = this.readArray.attributes.content.replace(/(<([^>]+)>)/g, "");
+    },
+    handleDateChanged(value){
+      this.getData(value);
+    }
   },
-  async created() {
-    this.readArray = await this.readingMorning(3),
-    this.loading = false
-  }
+  created() {
+    this.getData(this.date);
+  } 
 }
 </script>
 <style scoped>

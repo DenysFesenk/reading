@@ -9,12 +9,27 @@
 
 <script>
 import TheHeader from "./components/navigation/TheHeader";
+import { mapState } from 'vuex'
 
 export default {
   name: "app",
   components: {
     TheHeader,
   },
+  computed: {
+    ...mapState({
+      lightTheme: ({ lightTheme }) => lightTheme,
+    }),
+  },
+  methods:{
+
+  },
+  watch:{
+
+  },
+  mounted() {
+
+  }
 };
 </script>
 

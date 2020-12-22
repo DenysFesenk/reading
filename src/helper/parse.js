@@ -28,6 +28,10 @@ export const readingMorning = async (type, date) => {
     query.lessThanOrEqualTo("date", date);
     const results = await query.find();
     
+    // console.log('date', date);
+    // console.log('prevDate', prevDate)
+    // console.log('type', type)
+
     return (results[0]);
 }
 readingMorning();

@@ -13,7 +13,7 @@ export default {
 <style lang="scss">
     .the-title{
         text-align: center;
-
+        margin-bottom: 10px;
         font-size: 40px;
     }
 </style>

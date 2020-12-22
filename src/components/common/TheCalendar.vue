@@ -31,17 +31,23 @@ import DatePicker from "v-calendar/lib/components/date-picker.umd";
 
 export default {
   name: 'TheCalendar',
+    props:['dateChanged'],
     data() {
         return {
-            visible: false,
-            date: new Date(),
-            modelConfig: {
-                type: "nubmer",
-            },
+          visible: false,
+          date: new Date(),
+          modelConfig: {
+              type: "nubmer",
+          },
         }
     },
     components: {
-        DatePicker
+        DatePicker,
+    },
+    watch: {
+      date: function() {
+        this.dateChanged(this.date)
+      }
     },
     methods: {
         showCalendar() {
@@ -50,7 +56,7 @@ export default {
         modalCalendar() {
         this.visible = !this.visible;
         },
-    },
+    }
 }
 </script>
 

@@ -9,7 +9,7 @@
       ></dot-loader>
       <div v-if="!loading">
         <div v-if="readArray">
-          <the-calendar/>
+          <the-calendar :dateChanged="handleDateChanged" />
           <the-title> {{ readArray.attributes.title }} </the-title>
           <the-verse>{{ verse }}</the-verse>
           <the-content>{{ content }}</the-content>
@@ -36,18 +36,11 @@ export default {
       loading: true,
       verse: " ",
       content: " ",
-      date: new Date(),
-      modelConfig: {
-        type: "nubmer",
-      },
     };
   },
   watch: {
-    date: async function () {
-      (this.readArray = await this.readingMorning(0, this.date)),
-        (this.loading = false),
-        (this.verse = this.readArray.attributes.verse.replace(/(<([^>]+)>)/g, "")),
-        (this.content = this.readArray.attributes.content.replace(/(<([^>]+)>)/g, ""));
+    date: function(){
+      this.getData(this.date);
     },
   },
   components: {
@@ -59,13 +52,19 @@ export default {
   },
   methods: {
     readingMorning,
-  },
-  async created() {
-    (this.readArray = await this.readingMorning(2, this.date)),
+    async getData(value){
+    (this.readArray = await this.readingMorning(2, value)),
       (this.loading = false),
       (this.verse = this.readArray.attributes.verse.replace(/(<([^>]+)>)/g, "")),
       (this.content = this.readArray.attributes.content.replace(/(<([^>]+)>)/g, ""));
+    },
+    handleDateChanged(value){
+      this.getData(value);
+    },
   },
+  created() {
+    this.getData(this.date);
+  }
 };
 </script>
 <style scoped lang="scss">

@@ -5,8 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    lightTheme: true,
   },
   mutations: {
+    changeTheme(state){
+      state.lightTheme = !state.lightTheme;
+    },
   },
   actions: {
   },
