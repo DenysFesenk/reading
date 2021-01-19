@@ -6,15 +6,22 @@
           route.name
         }}</router-link>
       </li>
+      <toggle-button 
+        @change="onChange"
+        color="#85a5ff"
+      />
     </ul>
+    
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 export default {
   name: "The-header",
   data() {
     return {
+      value: 2,
       routes: [
         {
           path: "/",
@@ -38,6 +45,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    ...mapMutations(["changeTheme"]),
+    onChange(checked) {
+      this.changeTheme(checked);
+    },
   },
 };
 </script>

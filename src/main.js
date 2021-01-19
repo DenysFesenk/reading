@@ -9,12 +9,14 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VCalendar from 'v-calendar'
 import Calendar from 'v-calendar/lib/components/calendar.umd'
 import DatePicker from 'v-calendar/lib/components/date-picker.umd'
+import ToggleButton from 'vue-js-toggle-button'
 
 Vue.use(VCalendar, {
   componentPrefix: 'vc'
 });
 Vue.component('calendar', Calendar)
 Vue.component('date-picker', DatePicker)
+Vue.use(ToggleButton)
 
 library.add(faUserSecret)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

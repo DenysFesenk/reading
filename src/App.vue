@@ -22,19 +22,24 @@ export default {
     }),
   },
   methods:{
-
+    // ...mapMutations(["changeTheme"]),
   },
   watch:{
-
+    lightTheme(e){
+      e ? document.body.className = "" : document.body.className.add = ("dark-theme");
+    }
   },
-  mounted() {
-
-  }
 };
 </script>
 
 <style lang="scss">
 .app {
-  background-color: #fbfbfd;
+  background-color: var(--bg-color); 
+}
+:root{
+  --bg-color: #fafafa;
+}
+.dark-theme:root{
+  --bg-color: #595959;
 }
 </style>

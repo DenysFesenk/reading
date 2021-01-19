@@ -31,6 +31,7 @@ export default {
   name: "Morning",
   data() {
     return {
+      value: 2,
       readArray: [],
       verse: " ",
       content: " ",
@@ -53,7 +54,7 @@ export default {
     TheTitle,
     TheVerse,
     TheContent,
-    TheCalendar
+    TheCalendar,
   },
   methods: {
     readingMorning,

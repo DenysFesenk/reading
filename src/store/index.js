@@ -8,8 +8,8 @@ export default new Vuex.Store({
     lightTheme: true,
   },
   mutations: {
-    changeTheme(state){
-      state.lightTheme = !state.lightTheme;
+    changeTheme(state, payload){
+      state.lightTheme = payload;
     },
   },
   actions: {
