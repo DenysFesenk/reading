@@ -19,7 +19,11 @@
 
           <div class="calendar__prev" v-if="visible">
             <div class="calendar__block">
-              <date-picker mode="date" v-model="date" :model-config="modelConfig" />
+              <date-picker 
+                mode="date" 
+                v-model="date" 
+                :model-config="modelConfig" 
+                />
             </div>
           </div>
     </div>
@@ -63,18 +67,20 @@ export default {
 <style lang="scss" scoped>
      .calendar{
         position: absolute;
-        top: 110px;
-        left: 40px;
+        top: 140px;
+        left: 60px;
         &__icon {
             width: 30px;
             position: absolute;
             cursor: pointer;
+            fill: var(--text-color);
         }  
         &__day {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
+            color: var(--text-color);
         } 
         &__block {
             position: absolute;

@@ -16,7 +16,6 @@ export default {
     text-align: center;
     margin: 0 auto;
     max-width: 820px;
-    font-size: 18px;
-    font-weight: 500;
+    @include text($H80, 500, var(--text-color));
   }
 </style>

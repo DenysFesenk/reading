@@ -69,8 +69,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .sabath-school {
-  padding: 20px 40px;
-  min-height: 85vh;
+  padding: 20px 60px;
   &__spinner {
     padding: 10px;
     position: fixed;

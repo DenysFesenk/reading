@@ -69,7 +69,6 @@ export default {
       transform: translate(-50%, -50%);
     }
     .bible{
-      min-height: 85vh;
-      padding: 20px 40px;
+      padding: 20px 60px;
     }
 </style>

@@ -14,5 +14,6 @@ export default {
     .the-content {
         margin-top: 20px;
         font-size: 18px;
+        @include text($H80, 400, var(--text-color));
   }
 </style>

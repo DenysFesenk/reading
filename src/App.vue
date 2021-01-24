@@ -9,7 +9,7 @@
 
 <script>
 import TheHeader from "./components/navigation/TheHeader";
-import { mapState } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 
 export default {
   name: "app",
@@ -22,24 +22,38 @@ export default {
     }),
   },
   methods:{
-    // ...mapMutations(["changeTheme"]),
+    ...mapMutations(["changeTheme"]),
   },
   watch:{
     lightTheme(e){
-      e ? document.body.className = "" : document.body.className.add = ("dark-theme");
+      localStorage.setItem('lightTheme', e)
+      document.getElementById("my-app").classList.contains("dark-theme") 
+        ? document.getElementById("my-app").classList.remove("dark-theme") 
+        : document.getElementById("my-app").classList.add("dark-theme") 
+        
     }
   },
+  // mounted() {
+  //   localStorage.getItem('lightTheme') === 'true'
+  //     ? this.changeTheme(false)
+  //     : this.changeTheme(true);
+  // },
 };
 </script>
 
 <style lang="scss">
 .app {
   background-color: var(--bg-color); 
+  min-height: 100vh;
 }
 :root{
-  --bg-color: #fafafa;
+    --bg-color: #fafafa;
+    --text-color: #1d1d1f;
+    --bg-header: #2997ff;
 }
 .dark-theme:root{
-  --bg-color: #595959;
+  --bg-color: #1d1d1f;
+  --text-color: #fafafa;
+  --bg-header: #013b8c;
 }
 </style>

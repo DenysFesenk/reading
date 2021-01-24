@@ -2,13 +2,17 @@
   <div class="header">
     <ul class="header__list">
       <li class="header__item" v-for="route in routes" :key="route.name">
-        <router-link class="header__item-link" :to="route.path">{{
-          route.name
-        }}</router-link>
+        <router-link class="header__item-link" :to="route.path">
+          <img  :src="route.icon" alt="">
+          <img  class="header__icon" src="../../assets/icon/morning.png" alt="">
+          {{route.name}}
+        </router-link>
       </li>
       <toggle-button 
         @change="onChange"
-        color="#85a5ff"
+        color="#262626"
+        switch-color="#cf1322"
+        :labels="{checked: 'I', unchecked: '0'}"
       />
     </ul>
     
@@ -16,7 +20,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 export default {
   name: "The-header",
   data() {
@@ -26,6 +30,7 @@ export default {
         {
           path: "/",
           name: "Утренние чтение",
+          icon: "/src/assets/icon/dove.png"
         },
         {
           path: "/sabbath-school",
@@ -46,6 +51,11 @@ export default {
       ],
     };
   },
+  computed: {
+    ...mapState({
+      lightTheme: ({lightTheme}) => lightTheme
+    })
+  },
   methods: {
     ...mapMutations(["changeTheme"]),
     onChange(checked) {
@@ -59,11 +69,9 @@ export default {
 .header {
   position: relative;
   &__list {
-    padding: 30px;
-    background-color: #1a73e8;
-    // @include flex(center, center);
-    display: flex;
-    justify-content: center;
+    padding: 20px;
+    background-color: var(--bg-header);
+    @include flex(center, center);
   }
   &__item {
     text-align: center;
@@ -81,9 +89,13 @@ export default {
     font-weight: 600;
     transition: color 0.25s ease-in-out;
     font-size: 18px;
+    @include flex(center, center, column);
     &:hover {
       color: #b0b0b0;
     }
+  }
+  &__icon{
+    margin-bottom: 10px;
   }
 }
 </style>

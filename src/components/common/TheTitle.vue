@@ -14,6 +14,6 @@ export default {
     .the-title{
         text-align: center;
         margin-bottom: 10px;
-        font-size: 40px;
+        @include text($H400, 400, var(--text-color));
     }
 </style>

@@ -36,7 +36,7 @@ export default {
       verse: " ",
       content: " ",
       size: "50px",
-      color: "#1a73e8",
+      color: "{var(--bg-header)}",
       loading: true,
       date: new Date(),
       modelConfig: {
@@ -77,8 +77,7 @@ export default {
 
 <style scoped lang="scss">
 .reading {
-  min-height: 85vh;
-  padding: 20px 40px;
+  padding: 20px 60px;
   &__spinner {
     padding: 10px;
     position: fixed;
