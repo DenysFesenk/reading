@@ -77,7 +77,10 @@ export default {
 
 <style scoped lang="scss">
 .reading {
-  padding: 20px 60px;
+  padding: 30px;
+  @media screen and (min-width: 576px){
+    padding: 0 60px;
+  }
   &__spinner {
     padding: 10px;
     position: fixed;

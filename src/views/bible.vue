@@ -60,7 +60,7 @@ export default {
   } 
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
     .spinner{
       padding: 10px;
       position: fixed;
@@ -69,6 +69,9 @@ export default {
       transform: translate(-50%, -50%);
     }
     .bible{
-      padding: 20px 60px;
+      padding: 30px;
+      @media screen and (min-width: 576px){
+        padding: 0 60px;
+      };
     }
 </style>

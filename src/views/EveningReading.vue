@@ -54,7 +54,7 @@ export default {
   methods: {
     readingMorning,
     async getData(value){
-    (this.readArray = await this.readingMorning(2, value)),
+    (this.readArray = await this.readingMorning(1, value)),
       (this.loading = false),
       (this.verse = this.readArray.attributes.verse.replace(/(<([^>]+)>)/g, "")),
       (this.content = this.readArray.attributes.content.replace(/(<([^>]+)>)/g, ""));
@@ -70,7 +70,10 @@ export default {
 </script>
 <style scoped lang="scss">
     .evening{
-      padding: 20px 60px;
+    padding: 30px;
+    @media screen and (min-width: 576px){
+      padding: 0 60px;
+    }
       &__spinner{
         padding: 10px;
         position: fixed;
