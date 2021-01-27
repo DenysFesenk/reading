@@ -67,7 +67,7 @@ export default {
 <style lang="scss" scoped>
      .calendar{
         position: absolute;
-        top: 77px;
+        top: 85px;
         left: 60px;
         @media screen and (min-width: 576px){
           top: 140px;
