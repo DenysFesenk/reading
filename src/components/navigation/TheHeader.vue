@@ -8,19 +8,14 @@
         </router-link>
       </li>  
   </ul>
-      <toggle-button 
-        class="header__switch"
-        @change="onChange"
-        color="#8c8c8c"
-        switch-color="#cf1322"
-        :labels="{checked: 'on', unchecked: 'off'}"
-      />
+  <!-- <the-touch-bar /> -->
   </div>
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex';
+// import TheTouchBar from './TheTouchBar.vue';
 export default {
+  // components: { TheTouchBar },
   name: "The-header",
   data() {
     return {
@@ -53,17 +48,6 @@ export default {
         },
       ],
     };
-  },
-  computed: {
-    ...mapState({
-      lightTheme: ({lightTheme}) => lightTheme
-    })
-  },
-  methods: {
-    ...mapMutations(["changeTheme"]),
-    onChange(checked) {
-      this.changeTheme(checked);
-    },
   },
 };
 </script>
@@ -113,8 +97,6 @@ export default {
     }
   }
   &__icon{
-    // height: 22px;
-    // width: auto;
     margin-bottom: 6px;
   }
   &__switch{

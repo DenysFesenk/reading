@@ -44,11 +44,11 @@ export default {
       },
     };
   },
-  watch: {
-    date: function() {
-      this.getData(this.date);
-    }
-  },
+  // watch: {
+  //   data: function() {
+  //     this.getData(this.date);
+  //   }
+  // },
   components: {
     DotLoader,
     TheTitle,

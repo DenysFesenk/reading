@@ -33,11 +33,6 @@ export default {
         
     }
   },
-  // mounted() {
-  //   localStorage.getItem('lightTheme') === 'true'
-  //     ? this.changeTheme(false)
-  //     : this.changeTheme(true);
-  // },
 };
 </script>
 
