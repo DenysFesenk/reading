@@ -1,7 +1,11 @@
 <template>
   <div class="bar">
-    <the-arrow-left />
-    <span class="bar__date">{{this.date.getUTCDay()}}</span>
+    <ul class="bar__list-btn">
+      <li class="bar__item"><button class="bar__btn">&#8249;</button></li>
+      <li class="bar__item"><button class="bar__btn">Today</button></li>
+      <li class="bar__item"><button class="bar__btn">&#8250;</button></li>
+    </ul>
+    <!-- <span class="bar__date">today</span> -->
     <toggle-button 
         class="bar__switch"
         @change="onChange"
@@ -14,9 +18,7 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex';
-import TheArrowLeft from '../common/TheArrowLeft.vue';
 export default {
-  components: { TheArrowLeft },
     name: "The-Touch-Bar",
     data() {
       return {
@@ -51,5 +53,23 @@ export default {
   .bar{
     padding: 10px 60px;
     @include flex(center, center);
+    &__btn{
+      padding: 4px 8px;
+      border: none;
+      border-radius: 3px; 
+      outline: none;
+      cursor: pointer;
+      background-color: var(--bg-btn);
+      @include text($H40, normal, var(--text-color));
+    }
+    &__item{
+      &:not(:last-child){
+        margin-right: 5px;
+      }
+    }
+    &__list-btn{
+      margin-right: 50px;
+      @include flex(flex-start, stretch, row);
+    }
   }
 </style>

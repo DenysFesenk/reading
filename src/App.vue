@@ -45,10 +45,12 @@ export default {
     --bg-color: #fafafa;
     --text-color: #1d1d1f;
     --bg-header: #2997ff;
+    --bg-btn: #d9d9d9;
 }
 .dark-theme:root{
   --bg-color: #1d1d1f;
   --text-color: #fafafa;
   --bg-header: #013b8c;
+  --bg-btn: #8c8c8c;
 }
 </style>

@@ -69,7 +69,7 @@ export default {
       transform: translate(-50%, -50%);
     }
     .bible{
-      padding: 30px;
+      padding: 0 30px;
       @media screen and (min-width: 576px){
         padding: 0 60px;
       };

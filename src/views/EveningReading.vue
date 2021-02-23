@@ -70,7 +70,7 @@ export default {
 </script>
 <style scoped lang="scss">
     .evening{
-    padding: 30px;
+    padding: 0 30px;
     @media screen and (min-width: 576px){
       padding: 0 60px;
     }
