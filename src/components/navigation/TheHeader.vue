@@ -124,7 +124,7 @@ export default {
   &__block{
     position: absolute;
     right: 120px;
-    top: 25px;
+    top: 90px;
     @media screen and (min-width: 576px) {
       right: 90px;
       top: 35px;
